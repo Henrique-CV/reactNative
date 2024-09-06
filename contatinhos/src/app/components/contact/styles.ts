@@ -8,5 +8,10 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 7,
         gap: 7,
+    },
+    name: {
+        color: theme.colors.black,
+        fontFamily: theme.fontFamily.medium,
+        fontSize: 18,
     }
 })
