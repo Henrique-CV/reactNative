@@ -28,7 +28,7 @@ export function Home() {
                 const list = data.map((contact) => ({
                     id: contact.id ?? useId(),
                     name: contact.name,
-                    image: contact.image,
+                    image: contact.image,   
                 })).reduce<SectionListDataProps[]>((acc: any, item) => {
                     const firstLetter = item.name[0].toUpperCase()
                     const existingEntry = acc.find((entry: SectionListDataProps) =>
@@ -70,12 +70,14 @@ export function Home() {
                 sections={[{title: "R", data: [{id: "1", name: " Henrique "}] }]}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
-                    <Contact contact= {item} />
+                    <Contact contact={item}/>
                 )}
                 renderSectionHeader={({ section }) => 
                     (<Text style={styles.section}>{section.title}</Text>)}
                 contentContainerStyle = {styles.contentList}
-                />
+                showsVerticalScrollIndicator={false}
+                SectionSeparatorComponent= {() => <View style={styles.separator}/>}
+                />  
             </View>
         </View> 
     )
